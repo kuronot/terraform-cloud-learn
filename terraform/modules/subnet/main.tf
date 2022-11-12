@@ -2,7 +2,7 @@
 # Subnet
 ##############################################
 resource "aws_subnet" "main" {
-  for_each = var.subunets
+  for_each = var.subnets
 
   vpc_id     = var.vpc_id
   cidr_block = each.value.cidr_block
