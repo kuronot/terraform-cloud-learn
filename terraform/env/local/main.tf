@@ -15,6 +15,7 @@ module "mo_vpc" {
 module "mo_public_subnet" {
   source = "../../modules/subnet"
 
+  vpc_id  = module.mo_vpc.vpc.id
   subnets = local.subnets
 }
 locals {
