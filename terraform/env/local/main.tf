@@ -18,12 +18,14 @@ module "mo_public_subnet" {
   subunets = local.subunets
 }
 locals {
-  subnet01 = {
-    name = "kurono-pub-subnet01"
-    cidr_block = "10.0.1.0/24"
-  }
-  subnet02 = {
-    name = "kurono-pub-subnet02"
-    cidr_block = "10.0.2.0/24"
+  subunets = {
+    subnet01 = {
+      name       = "kurono-pub-subnet01"
+      cidr_block = "10.0.1.0/24"
+    }
+    subnet02 = {
+      name       = "kurono-pub-subnet02"
+      cidr_block = "10.0.2.0/24"
+    }
   }
 }
