@@ -1,12 +1,15 @@
+data "aws_region" "current" {}
+data "aws_caller_identity" "current" {}
+
 ##############################################
 # VPC
 ##############################################
 module "mo_vpc" {
   source = "../../modules/vpc"
 
-  cidr_block = "10.0.0.0/16"
-  vpc_name   = "kurono-test-vpc"
-  igw_name   = "kurono-test-igw"
+  cidr_block  = "10.0.0.0/16"
+  vpc_name    = "kurono-test-vpc"
+  igw_name    = "kurono-test-igw"
   pub_subnets = local.pub_subnets
   pri_subnets = local.pri_subnets
 }
