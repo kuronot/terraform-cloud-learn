@@ -4,8 +4,9 @@ data "aws_caller_identity" "current" {}
 ##############################################
 # VPC
 ##############################################
-module "mo_vpc" {
-  source = "../../modules/vpc"
+module "vpc" {
+  source  = "app.terraform.io/kurono-learn/vpc/aws"
+  version = "0.1.0"
 
   cidr_block  = "10.0.0.0/16"
   vpc_name    = "kurono-test-vpc"
