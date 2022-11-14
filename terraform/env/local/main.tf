@@ -60,5 +60,5 @@ module "s3" {
 
   bucket_name       = "kurono-test-s3"
   versioning_enable = "Enabled"
-  sse_enable        = 1
+  sse_enable        = 0
 }
