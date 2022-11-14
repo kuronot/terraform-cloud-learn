@@ -6,6 +6,8 @@ output region {
 output account_id {
   value       = data.aws_caller_identity.current.account_id
 }
+
+
 ##############################################
 # VPC
 ##############################################
@@ -48,4 +50,15 @@ locals {
       cidr_block = "10.0.4.0/24"
     }
   }
+}
+##############################################
+# S3
+##############################################
+module "s3" {
+  source  = "app.terraform.io/kurono-learn/s3/aws"
+  version = "0.1.0"
+
+  bucket_name       = "kurono-test-s3"
+  versioning_enable = "Enabled"
+  sse_enable        = 1
 }
